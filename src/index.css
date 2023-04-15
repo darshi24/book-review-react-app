@@ -11,3 +11,15 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.br-website-description {
+  text-align: justify;
+  font-size: 14px;
+}
+
+.br-search-btn {
+  height: 50px;
+  width : 200px;
+  font-size: 40px;
+}
+
