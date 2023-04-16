@@ -4,6 +4,7 @@ const API_KEY = process.env.NYTIME_API_KEY;
 
 
 export const getListNames = () => {
+    console.log(process.env.NYTIME_API_KEY);
     const response = axios.get(`${BASE_URL}/lists/names.json?api-key=${API_KEY}`);
     return response;
 };
