@@ -19,7 +19,7 @@ const ProfileComponent = () => {
         setProfile(user.data);
     }
     const fetchProfile = async () => {
-        await dispatch(profileThunk());
+        await dispatch(profileThunk);
         setProfile(currentUser);
     }
 
@@ -32,7 +32,7 @@ const ProfileComponent = () => {
     }
     useEffect(() => {
         loadScreen();
-    },[uid]);
+    });
 
 
     return(
