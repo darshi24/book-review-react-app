@@ -1,6 +1,8 @@
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE;
+// const BASE_URL = "http://localhost:4000/api";
 const REVIEWS_API = `${BASE_URL}/reviews`;
+
 
 export const getAllReviews = async() => {
     const response = await axios.get(`${REVIEWS_API}`);

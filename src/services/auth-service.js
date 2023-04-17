@@ -1,5 +1,6 @@
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE;
+// const BASE_URL = "http://localhost:4000/api";
 const SECURITY_API = `${BASE_URL}/users`;
 
 const api = axios.create({
@@ -36,7 +37,7 @@ export const login = async (user) => {
 
 export const logout = async (user) => {
     const response  = await api.post(`${SECURITY_API}/logout`, user);
-    return response.data
+    return response.data;
 }
 
 export const profile = async () => {
