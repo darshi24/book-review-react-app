@@ -17,10 +17,11 @@ const ProfileComponent = () => {
     const fetchProfileOtherUser = async () => {
         const user = await findUserByID(uid);
         setProfile(user.data);
+        return;
     }
     const fetchProfile = async () => {
-        await dispatch(profileThunk);
-        setProfile(currentUser);
+        const response = await dispatch(profileThunk());
+        setProfile(response.payload);
     }
 
     const loadScreen = async () => {
@@ -30,9 +31,10 @@ const ProfileComponent = () => {
             await fetchProfile();
         }
     }
+
     useEffect(() => {
         loadScreen();
-    });
+    },[uid]);
 
 
     return(

@@ -1,6 +1,5 @@
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE;
-// const BASE_URL = "http://localhost:4000/api";
 const REVIEWS_API = `${BASE_URL}/reviews`;
 
 
@@ -10,8 +9,6 @@ export const getAllReviews = async() => {
 }
 
 export const createReview = async (review) => {
-    console.log("In create review");
-    console.log(review);
     const response = await axios.post(`${REVIEWS_API}`,review);
     return response.data;
 }
@@ -27,10 +24,7 @@ export const deleteReview = async (rid) => {
 }
 
 export const getReviewsForBookISBN = async (isbn) => {
-    console.log("In function...")
     const response = await axios.get(`${REVIEWS_API}/book/${isbn}`);
-
-    console.log(response);
     return response.data;
 }
 

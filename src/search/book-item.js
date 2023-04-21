@@ -20,15 +20,10 @@ const BookItem = ({book}) => {
 
             <div className="col-sm-3 col-lg-2">
 
-                {
-                    currentUser ?
-                        <Link to={`/books?name=${book.title}&image=${book.book_image}&author=${book.author}&isbn=${book.primary_isbn10}`} className="btn btn-outline-primary">
-                            Reviews >>
-                        </Link> :
-                        <Link to="/login" className="btn btn-outline-primary">
-                            Reviews >>
-                        </Link>
-                }
+
+                <Link to={`/books?name=${book.title}&image=${book.book_image}&author=${book.author}&isbn=${book.primary_isbn10}`} className="btn btn-outline-primary">
+                    Reviews >>
+                </Link>
 
             </div>
         </div>

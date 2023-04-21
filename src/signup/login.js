@@ -10,7 +10,7 @@ const LogInComponent = () => {
     const login = async () => {
         try {
             await dispatch(loginThunk(loginUser));
-            navigate("/profile");
+            navigate("/");
         } catch (err) {
             console.log(err);
         }
@@ -33,7 +33,7 @@ const LogInComponent = () => {
                 </div>
 
                 <div className="form-floating mt-2">
-                    <input className="form-control" onChange={passwordChangeHandler}/>
+                    <input type="password" className="form-control" onChange={passwordChangeHandler}/>
                     <label className="form-label">Password</label>
                 </div>
 

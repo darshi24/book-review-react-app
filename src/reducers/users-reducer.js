@@ -1,5 +1,12 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {updateUserThunk, deleteUserThunk, loginThunk, logoutThunk, registerThunk, profileThunk} from "../thunks/user-thunks";
+import {
+    updateUserThunk,
+    deleteUserThunk,
+    loginThunk,
+    logoutThunk,
+    registerThunk,
+    profileThunk,
+} from "../thunks/user-thunks";
 const initialState = {
     loading : true,
     error : null,

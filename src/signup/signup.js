@@ -17,6 +17,13 @@ const SignUpComponent = () => {
         }
     }
 
+    const firstNameChangeHandler = (event) => {
+        setNewUser({...newUser, firstname: event.target.value})
+    }
+
+    const lastNameChangeHandler = (event) => {
+        setNewUser({...newUser, lastname: event.target.value})
+    }
     const userNameChangeHandler = (event) => {
         setNewUser({...newUser, username: event.target.value})
     }
@@ -32,6 +39,16 @@ const SignUpComponent = () => {
     return(
         <div className="row justify-content-center mt-5">
             <div className="form-group col-sm-9 col-md-7 cl-lg-6">
+                <div className="form-floating mt-2">
+                    <input  className="form-control" onChange={firstNameChangeHandler}/>
+                    <label className="form-label">First Name</label>
+                </div>
+
+                <div className="form-floating mt-2">
+                    <input  className="form-control" onChange={lastNameChangeHandler}/>
+                    <label className="form-label">Last Name</label>
+                </div>
+
                 <div className="form-floating mt-2">
                     <input  className="form-control" onChange={userNameChangeHandler}/>
                     <label className="form-label">User Name</label>

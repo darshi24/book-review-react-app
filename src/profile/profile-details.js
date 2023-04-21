@@ -12,6 +12,7 @@ import {
 } from "../services/follows-service";
 import {useEffect, useState} from "react";
 import {getReviewsCountForAuthor} from "../services/reviews-service";
+import {getWishlistCount} from "../services/wishlist-service";
 
 
 const ProfileDetails = ({user}) => {
@@ -19,6 +20,7 @@ const ProfileDetails = ({user}) => {
     const [followingCount, setFollowingCount]  = useState();
     const [followersCount, setFollowersCount]  = useState();
     const [reviewsCount, setReviewsCount] = useState();
+    const [booksInWishlistCount, setBooksInWishlistCount] = useState();
     const [isFollowing, setIsFollowing] = useState();
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -29,29 +31,32 @@ const ProfileDetails = ({user}) => {
     }
 
     const findIsAlreadyFollowing = async () => {
-        const response = await findIfFollowing(currentUser._id,user._id);
-        if (response) {
-            setIsFollowing(true);
-        }else{
-            setIsFollowing(false)
+        if(currentUser) {
+            const response = await findIfFollowing(currentUser._id,user._id);
+            if (response) {
+                setIsFollowing(true);
+            }else{
+                setIsFollowing(false)
+            }
         }
+
     }
 
     const loadScreen = async () => {
         const count1 = await findFollowersCount(user._id);
         const count2 = await findFollowingCount(user._id);
         const count3 = await getReviewsCountForAuthor(user._id);
+        const count4 = await getWishlistCount(user._id);
         await findIsAlreadyFollowing();
         setFollowersCount(count1);
         setFollowingCount(count2);
         setReviewsCount(count3);
-        console.log(followersCount);
-        console.log(followingCount);
+        setBooksInWishlistCount(count4);
     }
 
     useEffect(() => {
         loadScreen();
-    },[isFollowing]);
+    },[]);
 
     const followHandler = async () => {
         await userFollowsUser(currentUser._id, user._id);
@@ -80,8 +85,8 @@ const ProfileDetails = ({user}) => {
                             : <p className="card-text"><i>{user.bio}</i></p>
                     }
                     {
-                        user.email === undefined ? <p><i className="fas fa-envelope me-2"></i><i>No email registered</i></p> :
-                            <p><i className="fas fa-envelope me-2"></i>{user.email}</p>
+                        user.email === undefined ? currentUser && <p><i className="fas fa-envelope me-2"></i><i>No email registered</i></p> :
+                            currentUser && <p><i className="fas fa-envelope me-2"></i>{user.email}</p>
                     }
 
                 </div>
@@ -102,9 +107,10 @@ const ProfileDetails = ({user}) => {
                     }
                     {
                         user.role === "user" ?
-                            <div className="list-group-item">
-                                <span>Your Wishlist</span>
-                            </div> :
+                        currentUser!=null && currentUser._id === user._id && <Link to={`/profile/${user._id}/wishlist`} className="list-group-item">
+                                <span className="me-2 text-decoration-underline">Wishlist</span>
+                                <span className="badge bg-dark">{booksInWishlistCount}</span>
+                            </Link> :
                             <Link to={`/profile/${user._id}/reviews`} className="list-group-item">
                                 <span className="me-2 text-decoration-underline">Reviews</span>
                                 <span className="badge bg-dark">{reviewsCount}</span>

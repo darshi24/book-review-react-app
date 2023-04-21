@@ -14,6 +14,7 @@ import BookItemDetailsComponent from "./search/book-item-details";
 import CurrentUserContext from "./components/current-user-context";
 import UsersListComponent from "./stats/users";
 import ReviewsListComponent from "./stats/reviews";
+import WishListComponent from "./stats/wishlist";
 function App() {
   return (
       <Provider store={store}>
@@ -38,6 +39,7 @@ function App() {
                           <Route path="/profile/:uid/following" element={<UsersListComponent/>}/>
                           <Route path="/profile/:uid/followers" element={<UsersListComponent/>}/>
                           <Route path="/profile/:uid/reviews" element={<ReviewsListComponent/>}/>
+                          <Route path="/profile/:uid/wishlist" element={<WishListComponent/>}/>
                           <Route path="/edit-profile" element={<EditProfileComponent/>}/>
                       </Routes>
 

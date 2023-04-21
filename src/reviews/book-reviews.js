@@ -1,11 +1,11 @@
 import BookReviewItem from "./book-review-item";
 
-const BookReviewsComponent = ({resultingReviews}) => {
+const BookReviewsComponent = ({reviews}) => {
 
     return(
         <div className="col-11 list-group mt-3">
             {
-                resultingReviews.map((review) =>
+                reviews.map((review) =>
                     <BookReviewItem review={review}/>
                 )
             }

@@ -43,11 +43,11 @@ const UsersListComponent = () => {
                 <div className="row p-3 justify-content-center">
                     {
                         listType==="followers" && followers && followers.length > 0 ?
-                            followers.map((user) => <UsersItem user={user.follower}/>) :<></>
+                            followers.map((user) => <UsersItem key={user._id} user={user.follower}/>) :<></>
                     }
                     {
                         listType==="following" && following && following.length > 0 ?
-                            following.map((user) => <UsersItem user={user.followed}/>) :<></>
+                            following.map((user) => <UsersItem key={user._id} user={user.followed}/>) :<></>
                     }
                 </div>
         </div>

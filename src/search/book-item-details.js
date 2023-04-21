@@ -1,8 +1,9 @@
 import BookReviewsComponent from "../reviews/book-reviews";
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect, useState} from "react";
-import {profileThunk} from "../thunks/user-thunks";
-import {createReview, getReviewsForBookISBN} from "../services/reviews-service";
+import {Link} from "react-router-dom";
+import {addToWishlist} from "../services/wishlist-service";
+import {createReviewThunk, getReviewsForBookISBNThunk} from "../thunks/reviews-thunk";
 
 const BookItemDetailsComponent = () => {
     const x = useSelector(state => state.users);
@@ -14,14 +15,12 @@ const BookItemDetailsComponent = () => {
     const author = queryParameters.get("author");
     const isbn = queryParameters.get("isbn")
 
-    const [resultingReviews, setResultingReviews] = useState({});
+    const y = useSelector(state => state.reviews);
 
+    const dispatch = useDispatch();
     useEffect(() => {
         const api = async( ) => {
-            const reviewsForBook = await getReviewsForBookISBN(isbn);
-            console.log("Reviews");
-            console.log(reviewsForBook);
-            setResultingReviews(reviewsForBook);
+            await dispatch(getReviewsForBookISBNThunk(isbn));
         }
         api().catch(console.error);
     },[]);
@@ -38,12 +37,27 @@ const BookItemDetailsComponent = () => {
         })
     }
     const postReviewHandler = async () => {
-        await createReview(review);
+        await dispatch(createReviewThunk(review));
+    }
+
+    const addToWishListHandler = async() => {
+        const response = await addToWishlist(currentUser._id,{
+            "bookISBN":isbn,
+            "bookAuthor":author,
+            "bookTitle":name,
+            "bookImage":image
+        });
+        if(response){
+            alert("Book added to wishlist");
+        }else{
+            alert("Could not add book to wishlist");
+        }
+
     }
     return(
         <div>
             <div className="mt-3 row justify-content-center">
-                <div className="col-11 col-sm-10 col-md-8 d-inline-flex bg-primary align-items-center p-1 rounded-2">
+                <div className="col-11 col-sm-10 col-md-8 d-inline-flex bg-info align-items-center p-1 rounded-2">
                     <div className="col-2 col-sm-3 col-md-2 col-lg-2">
                         <img src={image} width="60px" height="60px"/>
                     </div>
@@ -53,7 +67,13 @@ const BookItemDetailsComponent = () => {
                         <div className="float-start">{author}</div>
                     </div>
                     <div className="col-5 col-sm-4 col-md-4 col-lg-3">
-                        <button className=" btn btn-outline-dark"> Add to WishList </button>
+                        {
+                            currentUser == null ?
+                                <Link to="/login" className=" btn btn-outline-dark"> Add to WishList </Link>
+                                :
+                                <button onClick={addToWishListHandler} className=" btn btn-outline-dark"> Add to WishList </button>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -78,9 +98,11 @@ const BookItemDetailsComponent = () => {
             </div>
             <div className="row justify-content-center">
                 {
-                    resultingReviews.length > 0 ? <BookReviewsComponent resultingReviews={resultingReviews}/> : <div></div>
+                    // resultingReviews.length > 0 ? <BookReviewsComponent resultingReviews={resultingReviews}/> : <div></div>
+                    y.loadingReviews === false && y.reviews ? <BookReviewsComponent reviews={y.reviews}/> : <div></div>
                 }
             </div>
+
 
         </div>
     )

@@ -9,7 +9,7 @@ const NavBarComponent = () => {
     const userState = useSelector(state => state.users);
     const currentUser = userState.currentUser;
     return(
-        <div className="navbar navbar-light bg-light">
+        <div className="navbar navbar-light bg-light ps-2">
             <ul className="nav nav-pills ms-2">
                 <li className="nav-item">
                     <Link to="/" className={`nav-link ${activePage === '' ? 'active' : ''}`} href="../home/home">Home</Link>
