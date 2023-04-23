@@ -56,7 +56,7 @@ const ProfileDetails = ({user}) => {
 
     useEffect(() => {
         loadScreen();
-    },[]);
+    });
 
     const followHandler = async () => {
         await userFollowsUser(currentUser._id, user._id);
