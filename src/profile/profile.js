@@ -27,10 +27,9 @@ const ProfileComponent = () => {
     const loadScreen = async () => {
         if(uid) {
             await fetchProfileOtherUser();
+        }else{
+            await fetchProfile();
         }
-        // else{
-        //     await fetchProfile();
-        // }
     }
 
     useEffect(() => {
