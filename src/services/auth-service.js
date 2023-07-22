@@ -1,5 +1,6 @@
 import axios from "axios";
 const BASE_URL = process.env.REACT_APP_API_BASE;
+// const BASE_URL = 'http://localhost:4000/api';
 const SECURITY_API = `${BASE_URL}/users`;
 
 const api = axios.create({
@@ -25,23 +26,23 @@ export const findUsersByRole = async (role) => {
 }
 
 export const register =  async (user) => {
-    const response = await api.post(`${SECURITY_API}/register`, user);
+    const response = await axios.post(`${SECURITY_API}/register`, user);
     return response.data;
 }
 
 export const login = async (user) => {
-    const response = await api.post(`${SECURITY_API}/login`, user);
+    const response = await axios.post(`${SECURITY_API}/login`, user);
     return response.data;
 }
 
 export const logout = async (user) => {
-    const response  = await api.post(`${SECURITY_API}/logout`, user);
+    const response  = await axios.post(`${SECURITY_API}/logout`, user);
     return response.data;
 }
 
 export const profile = async () => {
     console.log("Asking for profile from node");
-    const response = await api.get(`${SECURITY_API}/profile`);
+    const response = await axios.get(`${SECURITY_API}/profile`);
     console.log(response);
     return response.data;
 }

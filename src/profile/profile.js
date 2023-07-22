@@ -13,22 +13,25 @@ const ProfileComponent = () => {
     console.log("State of current user in profile page ")
     console.log(profile);
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const fetchProfileOtherUser = async () => {
         const user = await findUserByID(uid);
         setProfile(user.data);
         return;
     }
-    const fetchProfile = async () => {
-        const response = await dispatch(profileThunk());
-        setProfile(response.payload);
-    }
+    // const fetchProfile = async () => {
+    //     const response = await dispatch(profileThunk());
+    //     setProfile(response.payload);
+    //     console.log("After fetch profile");
+    //     console.log(response);
+    // }
 
     const loadScreen = async () => {
         if(uid) {
             await fetchProfileOtherUser();
         }else{
-            await fetchProfile();
+            // console.log("2")
+            // await fetchProfile();
         }
     }
 
