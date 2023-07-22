@@ -29,7 +29,7 @@ const LogInComponent = () => {
             <div className="form-group col-sm-9 col-md-7 cl-lg-6">
                 <div className="form-floating mt-2">
                     <input  className="form-control" onChange={userNameChangeHandler}/>
-                    <label className="form-label">Email</label>
+                    <label className="form-label">User Name</label>
                 </div>
 
                 <div className="form-floating mt-2">
