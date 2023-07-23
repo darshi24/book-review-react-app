@@ -20,7 +20,8 @@ Your go-to destination for honest and insightful book reviews. Join a passionate
 <img width="945" alt="home page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/63a671c4-4c6c-45cd-9338-c0fc6fdaadcd">
 <img width="952" alt="profile page 2" src="https://github.com/darshi24/book-review-react-app/assets/55186891/e7cc7cf2-1ab8-4d85-985c-367f9689e372">
 <img width="953" alt="followers page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/2159921a-18ca-4bfe-be9b-d9a73f07c3e3">
-<img width="960" alt="other person's profile" src="https://github.com/darshi24/book-review-react-app/assets/55186891/2e330fb8-6b85-4f3d-bf71-646ef5e50ab2">
+<img width="952" alt="reader's profile" src="https://github.com/darshi24/book-review-react-app/assets/55186891/45499861-0928-4633-82e9-9b40e5396e25">
+<img width="958" alt="wishlist page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/44ae04b3-edd4-480d-a947-f8e92563c4e3">
 <img width="958" alt="book reviews page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/2fb76d9c-fa18-4b97-b8ad-2d2af410647d">
 <img width="960" alt="search results" src="https://github.com/darshi24/book-review-react-app/assets/55186891/45e5e71c-14ff-451c-8fbd-68cfbe86449e">
 <img width="374" alt="search page 2" src="https://github.com/darshi24/book-review-react-app/assets/55186891/aaabccaf-ce22-4b80-b5de-d16dd0db7047">
@@ -28,4 +29,5 @@ Your go-to destination for honest and insightful book reviews. Join a passionate
 <img width="459" alt="drop down of book categories" src="https://github.com/darshi24/book-review-react-app/assets/55186891/9ab8767a-501c-4029-bcb4-ff996127ed4a">
 
 ## Notes
+
 This app was built independently by me as a part of my coursework within 3 weeks. Some features like authorization, authentication, and password encryption are not yet supported.
