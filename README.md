@@ -1,9 +1,6 @@
 # Book Reviews Web App
 Your go-to destination for honest and insightful book reviews. Join a passionate community of reviewers and readers who share a common love for the written word. Read comprehensive and unbiased book reviews from certified reviewers that help you discover new authors, explore different genres, and dive deeper into your favorite books.
 
-## Notes
-This app was built independently by me as a part of my coursework within 3 weeks. Some features like authorization, authentication, and password encryption are not yet supported.
-
 ## Features
 - Website design responsive to any screen size.
 - Sign up as a user/reader
@@ -30,4 +27,5 @@ This app was built independently by me as a part of my coursework within 3 weeks
 <img width="960" alt="sign up page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/1c7e9c34-3e12-42b6-b4bc-e4459039fe2c">
 <img width="459" alt="drop down of book categories" src="https://github.com/darshi24/book-review-react-app/assets/55186891/9ab8767a-501c-4029-bcb4-ff996127ed4a">
 
-
+## Notes
+This app was built independently by me as a part of my coursework within 3 weeks. Some features like authorization, authentication, and password encryption are not yet supported.
