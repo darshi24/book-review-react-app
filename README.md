@@ -1,6 +1,8 @@
 # Book Reviews Web App
 Your go-to destination for honest and insightful book reviews. Join a passionate community of reviewers and readers who share a common love for the written word. Read comprehensive and unbiased book reviews from certified reviewers that help you discover new authors, explore different genres, and dive deeper into your favorite books. Visit the website [here](https://preeminent-cranachan-3c8ddf.netlify.app/).
 
+#### Note - This repo is the front-end codebase of the application. Find the back-end code base repo [here](https://github.com/darshi24/book-review-node-app).
+
 ## Features
 - Website design responsive to any screen size.
 - Sign up as a user/reader
