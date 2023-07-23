@@ -23,6 +23,7 @@ Your go-to destination for honest and insightful book reviews. Join a passionate
 <img width="952" alt="reader's profile" src="https://github.com/darshi24/book-review-react-app/assets/55186891/45499861-0928-4633-82e9-9b40e5396e25">
 <img width="958" alt="wishlist page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/44ae04b3-edd4-480d-a947-f8e92563c4e3">
 <img width="958" alt="book reviews page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/2fb76d9c-fa18-4b97-b8ad-2d2af410647d">
+<img width="955" alt="anon user cannot read full review" src="https://github.com/darshi24/book-review-react-app/assets/55186891/4f3678bb-0399-4e91-81d4-7c2dea54473c">
 <img width="960" alt="search results" src="https://github.com/darshi24/book-review-react-app/assets/55186891/45e5e71c-14ff-451c-8fbd-68cfbe86449e">
 <img width="374" alt="search page 2" src="https://github.com/darshi24/book-review-react-app/assets/55186891/aaabccaf-ce22-4b80-b5de-d16dd0db7047">
 <img width="960" alt="sign up page" src="https://github.com/darshi24/book-review-react-app/assets/55186891/1c7e9c34-3e12-42b6-b4bc-e4459039fe2c">
